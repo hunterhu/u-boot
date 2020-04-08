@@ -223,10 +223,8 @@
 
 #ifdef CONFIG_ODROIDC_REV2
 #define CONFIG_ENV_SIZE                 (32 * 1024)     // unit: bytes
-#define CONFIG_ENV_OFFSET               (720 * 1024)    // unit: bytes
 #else
 #define CONFIG_ENV_SIZE                 (32 * 1024)     // unit: bytes
-#define CONFIG_ENV_OFFSET               (512 * 1024)    // unit: bytes
 #endif
 
 #define CONFIG_MMC_BOOT
@@ -234,10 +232,13 @@
 #if defined CONFIG_MMC_BOOT
 #define CONFIG_ENV_IS_IN_MMC
 #define CONFIG_CMD_SAVEENV
-#define CONFIG_SYS_MMC_ENV_DEV          0
 #else
 #define CONFIG_ENV_IS_NOWHERE           1
 #endif
+
+/* mender requirements */
+#define CONFIG_BOOTCOUNT_LIMIT
+#define CONFIG_BOOTCOUNT_ENV
 
 //-----------------------------------------------------------------------
 // DDR setting
