@@ -37,6 +37,8 @@
 #include <asm/arch/nand.h>
 #endif
 
+#include <env_mender.h>
+
 DECLARE_GLOBAL_DATA_PTR;
 
 extern env_t *env_ptr;
@@ -53,6 +55,7 @@ static uchar env_get_char_init (int index);
 #define MK_STR(x)	XMK_STR(x)
 
 uchar default_environment[] = {
+    MENDER_ENV_SETTINGS
 #ifdef	CONFIG_BOOTARGS
 	"bootargs="	CONFIG_BOOTARGS			"\0"
 #endif
