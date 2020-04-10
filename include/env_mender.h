@@ -21,6 +21,9 @@
 
 #include <config_mender_defines.h>
 
+#define __stringify_1(x...) #x
+#define __stringify(x...)  __stringify_1(x)
+
 #ifdef MENDER_NO_DEFAULT_ALTBOOTCMD
 # define MENDER_DEFAULT_ALTBOOTCMD
 #else
