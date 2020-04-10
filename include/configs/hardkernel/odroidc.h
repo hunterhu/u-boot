@@ -221,11 +221,8 @@
 
 #define CONFIG_AUTO_COMPLETE            1
 
-#ifdef CONFIG_ODROIDC_REV2
-#define CONFIG_ENV_SIZE                 (32 * 1024)     // unit: bytes
-#else
-#define CONFIG_ENV_SIZE                 (32 * 1024)     // unit: bytes
-#endif
+/* Matching config_mender_defines.h MENDER_BOOTENV_SIZE definition */
+#define CONFIG_ENV_SIZE                 (128 * 1024)     // unit: bytes
 
 #define CONFIG_MMC_BOOT
 
